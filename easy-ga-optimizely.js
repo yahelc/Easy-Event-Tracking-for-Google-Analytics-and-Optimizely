@@ -8,7 +8,7 @@ $.fn.analytics = function(callback) {
   return this.each(function() {
         $(this).one('keydown.analytics mousedown.analytics',function(e) {
         if(e.type==="mousedown" || e.which===13){
-        callback();
+        callback.apply(this);
     }
     });
   });
