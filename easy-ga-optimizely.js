@@ -29,12 +29,14 @@ $.fn.gaevent = function(ga){
 /*
 usage: $('#foo').optimizely('goal_name');
 */
-if(typeof(optimizely)!=="undefined")
-{
  $.fn.optimizely = function(goal){
     return this.each(function() {
-    $(this).analytics(function(){optimizely.trackEvent(goal);});
- });
-};
+    $(this).analytics(function(){
+if(typeof(optimizely)!=="undefined")
+{
+optimizely.trackEvent(goal); 
 }
+});
+});
+};
 })(jQuery);
